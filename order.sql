@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS `order` (
   `email` varchar(255) NOT NULL,
   `weight` float NOT NULL,
   `price` float NOT NULL,
-  `date_order` datetime NOT NULL,
-  `date_end` datetime NOT NULL,
+  `date_order` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `date_end` timestamp NULL,
   `status` varchar(255) NOT NULL DEFAULT 'Undone',
   PRIMARY KEY (`id_order`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
