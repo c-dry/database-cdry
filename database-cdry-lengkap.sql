@@ -26,9 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `order`
 --
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
   `id_order` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
   `weight` float NOT NULL,
   `price` float NOT NULL,
   `date_order` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
@@ -40,11 +41,11 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id_order`, `email`, `weight`, `price`, `date_order`, `date_end`, `status`) VALUES
-(21, 'dias@mail.com', 5, 5000, '2017-03-21 10:35:16', '2017-03-23 10:35:16', 'Done'),
-(22, 'samuel@mail.com', 10, 10000, '2017-03-22 10:35:16', '2017-03-24 10:35:16', 'Done'),
-(23, 'aldi@mail.com', 20, 20000, '2017-03-24 10:35:16', '2017-03-29 10:35:16', 'Done'),
-(24, 'david@mail.com', 3, 3000, '2017-03-21 10:35:16', '2017-03-22 10:35:16', 'Done');
+INSERT INTO `orders` (`id_order`, `email`, `address`, `weight`, `price`, `date_order`, `date_end`, `status`) VALUES
+(21, 'dias@mail.com', 'Jalan Magelang', 5, 5000, '2017-03-21 10:35:16', '2017-03-23 10:35:16', 'Done'),
+(22, 'samuel@mail.com', 'Jalan Janti', 10, 10000, '2017-03-22 10:35:16', '2017-03-24 10:35:16', 'Done'),
+(23, 'aldi@mail.com', 'Jalan Solo Raya', 20, 20000, '2017-03-24 10:35:16', '2017-03-29 10:35:16', 'Done'),
+(24, 'david@mail.com', 'Jalan Babarsari Raya', 3, 3000, '2017-03-21 10:35:16', '2017-03-22 10:35:16', 'Done');
 
 -- --------------------------------------------------------
 
@@ -79,7 +80,7 @@ INSERT INTO `user` (`id_user`, `email`, `password`, `name`, `address`, `role`) V
 --
 -- Indexes for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id_order`);
 
 --
@@ -95,7 +96,7 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for table `order`
 --
-ALTER TABLE `order`
+ALTER TABLE `orders`
   MODIFY `id_order` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `user`
